@@ -1,0 +1,174 @@
+ /* Existing Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#background-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+/* Adjusted Content Style */
+.content {
+    position: absolute;
+    top: 0; /* Aligns content to the top of the page */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    text-align: center;
+    color: #e0b92a;
+    z-index: 1;
+    width: 100%; /* Full width */
+    padding: 20px 10px; /* Adds padding to the top and bottom */
+    background: rgba(0, 0, 0, 0.5); /* Optional: Adds a semi-transparent background for contrast */
+}
+
+ 
+
+/* Glassmorphism Effect */
+.intro, .daily-specials {
+    width: 80%;
+    max-width: 600px;
+     
+    background:  rgba(123, 117, 117, 0.7);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 20px;
+    color: #fff;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    margin: 20px auto;
+    margin-top: 150px; /* Ensure there's space below the heading */
+}
+
+.daily-specials {
+    margin-top: 20px;
+}
+
+.intro h2, .daily-specials h2 {
+    color:white;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    color: #e0b92a;
+    font-size: 1rem;
+}
+
+.daily-specials ul {
+    color: #e0b92a;
+    list-style: none;
+    padding: 0;
+}
+
+.daily-specials li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+/* Bottom Navigation Bar Styles */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(123, 117, 117, 0.7);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 2;
+}
+
+.bottom-nav .nav-item {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+    padding: 5px;
+}
+
+.bottom-nav .nav-item i {
+    font-size: 1.5rem;
+    display: block;
+}
+
+.bottom-nav .nav-item .nav-text {
+    display: block;
+    font-size: 0.8rem;
+}
+
+.bottom-nav .nav-item:hover {
+    color: #e0b92a; /* Change icon color on hover */
+}
+
+/* Responsive Design */
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .main-heading {
+        font-size: 4rem; /* Larger font size for desktops */
+    }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .main-heading {
+        font-size: 3rem; /* Adjust font size for tablets */
+    }
+}
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .main-heading {
+        font-size: 2.5rem; /* Adjust font size for small landscape devices */
+    }
+    
+    .intro, .daily-specials {
+        width: 90%; /* Adjust width for smaller devices */
+        padding: 15px; /* Adjust padding for smaller devices */
+    }
+    
+    .intro h2, .daily-specials h2 {
+        font-size: 1.75rem; /* Adjust font size for headings */
+    }
+    
+    .intro p, .daily-specials ul li {
+        font-size: 0.9rem; /* Adjust font size for text */
+    }
+}
+
+/* Extra small devices (portrait phones, less than 576px) */
+@media (max-width: 575px) {
+    .main-heading {
+        font-size: 2rem; /* Adjust font size for portrait phones */
+    }
+    
+    .intro, .daily-specials {
+        width: 95%; /* Adjust width for extra small screens */
+        padding: 10px; /* Adjust padding for extra small screens */
+    }
+    
+    .intro h2, .daily-specials h2 {
+        font-size: 1.5rem; /* Adjust font size for headings */
+    }
+    
+    .intro p, .daily-specials ul li {
+        font-size: 0.8rem; /* Adjust font size for text */
+    }
+}

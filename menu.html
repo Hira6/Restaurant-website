@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Tastebud Journey</title>
+    <style>
+        /* General Styles */
+        /* General Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #e0b92a;
+    background-color: #000000;
+}
+
+header.menu-header {
+    background: url('restaurant-blank-menu-with-picture-and-animation-template-55qgwv0b23f154.webp') no-repeat center center/cover;
+    text-align: center;
+    padding: 100px 20px;
+    color: #e0b92a;
+    position: relative;
+    overflow: hidden;
+}
+
+header.menu-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+header.menu-header p {
+    color: black;
+    font-size: 1.5rem;
+    margin-bottom: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.menu-content {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.menu-category {
+    margin-bottom: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.menu-category h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #e0b92a;
+}
+
+.menu-category .items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.menu-category .item {
+    flex: 1 1 30%;
+    box-sizing: border-box;
+    margin: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.menu-category .item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.menu-category .item div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.menu-category .item .item-name {
+    font-size: 1.2rem;
+    color: #fafaf8;
+    margin-bottom: 5px;
+}
+
+.menu-category .item .item-price {
+    font-size: 1.2rem;
+    color: #e0b92a;
+    margin-bottom: 10px;
+}
+
+.order-button {
+    background-color: #e0b92a;
+    color: #000000;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #d0a42a;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(123, 117, 117, 0.7);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    z-index: 2;
+}
+
+.bottom-nav .nav-item {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    flex: 1;
+    padding: 5px;
+}
+
+.bottom-nav .nav-item i {
+    font-size: 1.5rem;
+    display: block;
+}
+
+.bottom-nav .nav-item .nav-text {
+    display: block;
+    font-size: 0.8rem;
+}
+
+.bottom-nav .nav-item:hover {
+    color: #e0b92a; /* Change icon color on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+    header.menu-header h1 {
+        font-size: 2.8rem;
+    }
+
+    header.menu-header p {
+        font-size: 1.3rem;
+    }
+
+    .menu-category {
+        padding: 15px;
+    }
+
+    .menu-category .item {
+        flex-basis: 45%; /* Slightly larger width for medium screens */
+    }
+
+    .menu-category .item img {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+@media (max-width: 768px) {
+    header.menu-header h1 {
+        font-size: 2.5rem;
+    }
+
+    header.menu-header p {
+        font-size: 1.2rem;
+    }
+
+    .menu-category {
+        padding: 10px;
+    }
+
+    .menu-category .item {
+        flex-basis: 100%; /* Full width for smaller screens */
+    }
+
+    .menu-category .item img {
+        width: 150px; /* Larger images for better visibility */
+        height: 150px;
+    }
+
+    .menu-category .item .item-name,
+    .menu-category .item .item-price {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 576px) {
+    header.menu-header h1 {
+        font-size: 2rem;
+    }
+
+    header.menu-header p {
+        font-size: 1rem;
+    }
+
+    .menu-category .item img {
+        width: 180px; /* Larger images for better visibility */
+        height: 180px;
+    }
+
+    .menu-category .item .item-name,
+    .menu-category .item .item-price {
+        font-size: 0.9rem;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <header class="menu-header">
+         <h1>Our Menu</h1>
+        <p>Discover Our Delicious Offerings</p>
+    </header>
+
+    <section class="menu-content">
+        <div class="menu-category">
+            <h2>Starters</h2>
+            <div class="items">
+                <div class="item">
+                    <img src="Bruschetta.jpg" alt="Bruschetta">
+                    <div>
+                        <span class="item-name">Bruschetta</span>
+                        <span class="item-price">$8.00</span>
+                        <a href="order.html?item=bruschetta" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="stuffed-mushrooms-2.jpg" alt="Stuffed Mushrooms">
+                    <div>
+                        <span class="item-name">Stuffed Mushrooms</span>
+                        <span class="item-price">$10.00</span>
+                        <a href="order.html?item=stuffed-mushrooms" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="budi-puspa-wijaya-1ugpo9WYPXs-unsplash.jpg" alt="Spring Rolls">
+                    <div>
+                        <span class="item-name">Spring Rolls</span>
+                        <span class="item-price">$9.00</span>
+                        <a href="order.html?item=spring-rolls" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="garlic bread.jpg" alt="Garlic Bread">
+                    <div>
+                        <span class="item-name">Garlic Bread</span>
+                        <span class="item-price">$7.00</span>
+                        <a href="order.html?item=garlic-bread" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="caprese salad.jpg" alt="Caprese Salad">
+                    <div>
+                        <span class="item-name">Caprese Salad</span>
+                        <span class="item-price">$11.00</span>
+                        <a href="order.html?item=caprese-salad" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="appetizer.jpg" alt="New Starter">
+                    <div>
+                        <span class="item-name">Appetizer</span>
+                        <span class="item-price">$9.50</span>
+                        <a href="order.html?item=new-starter" class="order-button">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h2>Main Courses</h2>
+            <div class="items">
+                <div class="item">
+                    <img src="grilled salmon.jpg" alt="Grilled Salmon">
+                    <div>
+                        <span class="item-name">Grilled Salmon</span>
+                        <span class="item-price">$18.00</span>
+                        <a href="order.html?item=grilled-salmon" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="15korex1-tenderloin-1-63ce-superJumbo.jpg" alt="Beef Tenderloin">
+                    <div>
+                        <span class="item-name">Beef Tenderloin</span>
+                        <span class="item-price">$22.00</span>
+                        <a href="order.html?item=beef-tenderloin" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="chicken permasen.webp" alt="Chicken Parmesan">
+                    <div>
+                        <span class="item-name">Chicken permasen</span>
+                        <span class="item-price">$19.00</span>
+                        <a href="order.html?item=chicken-parmesan" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="VegetableStirFry_10.webp" alt="Vegetable Stir Fry">
+                    <div>
+                        <span class="item-name">Vegetable Stir Fry</span>
+                        <span class="item-price">$17.00</span>
+                        <a href="order.html?item=vegetable-stir-fry" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="spaghetti carbonara.jfif" alt="Spaghetti Carbonara">
+                    <div>
+                        <span class="item-name">Spaghetti Carbonara</span>
+                        <span class="item-price">$16.00</span>
+                        <a href="order.html?item=spaghetti-carbonara" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="stuffed-bell-peppers-vegan-gluten-free.jpg" alt="New Main Course">
+                    <div>
+                        <span class="item-name">Stuffed Peppers</span>
+                        <span class="item-price">$21.00</span>
+                        <a href="order.html?item=new-main-course" class="order-button">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="menu-category">
+            <h2>Desserts</h2>
+            <div class="items">
+                <div class="item">
+                    <img src="cheese cake.jpg" alt="Cheesecake">
+                    <div>
+                        <span class="item-name">Cheesecake</span>
+                        <span class="item-price">$7.00</span>
+                        <a href="order.html?item=cheesecake" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="tiramisu.jpg" alt="Tiramisu">
+                    <div>
+                        <span class="item-name">Tiramisu</span>
+                        <span class="item-price">$8.00</span>
+                        <a href="order.html?item=tiramisu" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="chocolate mousse.jpg" alt="Chocolate Mousse">
+                    <div>
+                        <span class="item-name">Chocolate Mousse</span>
+                        <span class="item-price">$7.50</span>
+                        <a href="order.html?item=chocolate-mousse" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="panna cotta.jpg" alt="Panna Cotta">
+                    <div>
+                        <span class="item-name">Panna Cotta</span>
+                        <span class="item-price">$7.00</span>
+                        <a href="order.html?item=panna-cotta" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="fruit tart.jpg" alt="Fruit Tart">
+                    <div>
+                        <span class="item-name">Fruit Tart</span>
+                        <span class="item-price">$8.50</span>
+                        <a href="order.html?item=fruit-tart" class="order-button">Order Now</a>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="donuts.jpg" alt="New Dessert">
+                    <div>
+                        <span class="item-name">Donuts</span>
+                        <span class="item-price">$8.00</span>
+                        <a href="order.html?item=new-dessert" class="order-button">Order Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fa fa-home"></i>
+            <span class="nav-text">Home</span>
+        </a>
+        <a href="menu.html" class="nav-item">
+            <i class="fa-solid fa-utensils"></i>
+            <span class="nav-text">Menu</span>
+        </a>
+        <a href="about.html" class="nav-item">
+            <i class="fa fa-info-circle"></i>
+            <span class="nav-text">About</span>
+        </a>
+        <a href="contact.html" class="nav-item">
+            <i class="fa fa-phone"></i>
+            <span class="nav-text">Contact</span>
+        </a>
+    </nav>
+
+    <!-- Font Awesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-..." crossorigin="anonymous"></script>
+</body>
+</html>

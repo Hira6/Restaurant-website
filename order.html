@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order - Tastebud Journey</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #e0b92a;
+            background-color: #000000;
+        }
+
+        header.order-header {
+            background: url('online-food-order-concept-vector.jpg') no-repeat center center/cover;
+             
+            text-align: center;
+            padding: 100px 20px;
+            color: #e0b92a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header.order-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        .order-form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 50px auto;
+            padding: 20px;
+        }
+
+        .order-form {
+            max-width: 600px;
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .order-form label {
+            display: block;
+            margin-bottom: 10px;
+            color: #e0b92a;
+            font-size: 1.2rem;
+        }
+
+        .order-form input,
+        .order-form textarea,
+        .order-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #333;
+            background: #ffffff;
+            color: #000000;
+            box-sizing: border-box;
+        }
+
+        .order-form button {
+            background-color: #e0b92a;
+            color: #000000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            width: 100%;
+        }
+
+        .order-form button:hover {
+            background-color: #d0a42a;
+        }
+
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(123, 117, 117, 0.7);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 2;
+        }
+
+        .bottom-nav .nav-item {
+            color:  white;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+            padding: 5px;
+        }
+
+        .bottom-nav .nav-item i {
+            font-size: 1.5rem;
+            display: block;
+        }
+
+        .bottom-nav .nav-item .nav-text {
+            display: block;
+            font-size: 0.8rem;
+        }
+
+        .bottom-nav .nav-item:hover {
+            color: #e0b92a; /* Change icon color on hover */
+             
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            header.order-header h1 {
+                font-size: 2.5rem;
+            }
+
+            .order-form {
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header.order-header h1 {
+                font-size: 2rem;
+            }
+
+            .order-form {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="order-header">
+        <h1>Order Now</h1>
+    </header>
+
+    <div class="order-form-container">
+        <section class="order-form">
+            <form id="orderForm" onsubmit="return handleOrderSubmit(event);">
+                <input type="hidden" name="item" value="">
+                
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="address">Delivery Address:</label>
+                <textarea id="address" name="address" rows="3" required></textarea>
+
+                <label for="instructions">Special Instructions:</label>
+                <textarea id="instructions" name="instructions" rows="3"></textarea>
+
+                <button type="submit">Place Order</button>
+            </form>
+        </section>
+    </div>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fa fa-home"></i>
+            <span class="nav-text">Home</span>
+        </a>
+        <a href="menu.html" class="nav-item">
+            <i class="fa-solid fa-utensils"></i>
+            <span class="nav-text">Menu</span>
+        </a>
+        <a href="about.html" class="nav-item">
+            <i class="fa fa-info-circle"></i>
+            <span class="nav-text">About</span>
+        </a>
+        <a href="contact.html" class="nav-item">
+            <i class="fa fa-phone"></i>
+            <span class="nav-text">Contact</span>
+        </a>
+    </nav>
+
+    <!-- Font Awesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-..." crossorigin="anonymous"></script>
+    <script>
+        // Handle the form submission
+        function handleOrderSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting normally
+            alert('Thanks for placing the order, your order will be delivered soon.');
+            document.getElementById('orderForm').reset();
+        }
+
+        // Pre-fill the item name from query parameters
+        document.addEventListener('DOMContentLoaded', function() {
+            const params = new URLSearchParams(window.location.search);
+            const itemName = params.get('item');
+            document.querySelector('input[name="item"]').value = itemName;
+        });
+    </script>
+</body>
+</html>

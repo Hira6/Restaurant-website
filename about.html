@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Tastebud Journey</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            color: #e0b92a;
+            background-color: #000000;
+        }
+
+        header.about-header {
+            background: url('pexels-skyler-ewing-266953-9502639.jpg') no-repeat center center/cover;
+            text-align: center;
+            padding: 100px 20px;
+            color: #e0b92a;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header.about-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+        }
+
+        header.about-header p {
+            color: black;
+            font-size: 1.5rem;
+            margin-bottom: 0;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-content {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .about-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #e0b92a;
+        }
+
+        .history, .team, .testimonials {
+            margin-bottom: 50px;
+        }
+
+        .history p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #fafaf8;
+        }
+
+        .team-member {
+            display: inline-block;
+            width: 45%;
+            margin: 20px 2.5%;
+            text-align: left;
+            background:  rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            border-radius: 10px;
+            padding: 20px;
+            vertical-align: top;
+        }
+
+        .team-member img {
+            width: 100%;
+            height: 300px; /* Set a fixed height */
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #e0b92a;
+            text-align: center;
+        }
+
+        .team-member p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color:  #fafaf8;
+            text-align: center;
+        }
+
+        .testimonials {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .testimonial {
+            margin-bottom: 20px;
+        }
+
+        .testimonial p {
+            font-size: 1.2rem;
+            color: #fafaf8;
+            font-style: italic;
+        }
+
+        .testimonial h4 {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #e0b92a;
+        }
+
+        .about-footer {
+            background-color: #000000;
+            color: #e0b92a;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Bottom Navigation Bar Styles */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(123, 117, 117, 0.7);
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 10px 0;
+            z-index: 2;
+        }
+
+        .bottom-nav .nav-item {
+            color:  white;
+            text-decoration: none;
+            text-align: center;
+            flex: 1;
+            padding: 5px;
+        }
+
+        .bottom-nav .nav-item i {
+            font-size: 1.5rem;
+            display: block;
+        }
+
+        .bottom-nav .nav-item .nav-text {
+            display: block;
+            font-size: 0.8rem;
+        }
+
+        .bottom-nav .nav-item:hover {
+            color: #e0b92a; /* Change icon color on hover */
+             
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1200px) {
+            header.about-header {
+                padding: 80px 20px;
+            }
+
+            header.about-header h1 {
+                font-size: 3rem;
+            }
+
+            header.about-header p {
+                font-size: 1.3rem;
+            }
+        }
+
+        @media (max-width: 992px) {
+            header.about-header {
+                padding: 60px 20px;
+            }
+
+            header.about-header h1 {
+                font-size: 2.5rem;
+            }
+
+            header.about-header p {
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header.about-header {
+                padding: 50px 15px;
+            }
+
+            header.about-header h1 {
+                font-size: 2rem;
+            }
+
+            header.about-header p {
+                font-size: 1rem;
+            }
+
+            .team-member {
+                width: 90%;
+                margin: 20px auto;
+            }
+
+            .about-content {
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            header.about-header {
+                padding: 40px 10px;
+            }
+
+            header.about-header h1 {
+                font-size: 1.5rem;
+            }
+
+            header.about-header p {
+                font-size: 0.9rem;
+            }
+
+            .team-member h3 {
+                font-size: 1.2rem;
+            }
+
+            .team-member p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="about-header">
+        <h1>About Tastebud Journey</h1>
+        <p>Discover Our Story and Passion for Culinary Excellence</p>
+    </header>
+
+    <section class="about-content">
+        <div class="history">
+            <h2>Our History</h2>
+            <p>Tastebud Journey began as a small family-owned restaurant with a mission to bring the world's flavors to your plate. Over the years, we have grown into a beloved dining destination, known for our diverse menu and commitment to quality.</p>
+        </div>
+
+        <div class="team">
+            <h2>Meet Our Team</h2>
+            <div class="team-member">
+                <img src="pexels-mikhail-nilov-8092494.jpg" alt="Chef">
+                <h3>Chef John Doe</h3>
+                <p>Our head chef, John, has over 20 years of experience in the culinary industry. His creativity and dedication to quality have made Tastebud Journey what it is today.</p>
+            </div>
+            <div class="team-member">
+                <img src="pexels-mikhail-nilov-6930406.jpg" alt="Manager">
+                <h3>Jane Smith</h3>
+                <p>Jane, our restaurant manager, ensures that every guest has a memorable dining experience. Her attention to detail and passion for hospitality are unmatched.</p>
+            </div>
+        </div>
+
+        <div class="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonial">
+                <p>"Tastebud Journey offers a dining experience like no other. The food is exceptional, and the ambiance is perfect for any occasion."</p>
+                <h4>- Emily R.</h4>
+            </div>
+            <div class="testimonial">
+                <p>"I've been a regular at Tastebud Journey for years. The quality never disappoints, and the staff always makes me feel at home."</p>
+                <h4>- Michael T.</h4>
+            </div>
+        </div>
+    </section>
+
+    <nav class="bottom-nav">
+        <a href="index.html" class="nav-item">
+            <i class="fa fa-home"></i>
+            <span class="nav-text">Home</span>
+        </a>
+        <a href="menu.html" class="nav-item">
+            <i class="fa-solid fa-utensils"></i>
+            <span class="nav-text">Menu</span>
+        </a>
+        <a href="about.html" class="nav-item">
+            <i class="fa fa-info-circle"></i>
+            <span class="nav-text">About</span>
+        </a>
+        <a href="contact.html" class="nav-item">
+            <i class="fa fa-phone"></i>
+            <span class="nav-text">Contact</span>
+        </a>
+    </nav>
+    
+
+    <!-- Font Awesome CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js" integrity="sha512-..." crossorigin="anonymous"></script>
+</body>
+</html>
